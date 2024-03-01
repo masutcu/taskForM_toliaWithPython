@@ -121,6 +121,13 @@ toplam2=int(total2.text.split()[1])
 miktar1=int(quantity1.text)
 miktar2=int(quantity2.text)
 
+#Lambda ile toplam fiyat kontrolü
+check_operation = lambda toplam1, fiyat1, miktar1: "Başarılı" if fiyat1 * miktar1 == toplam1 else "Başarısız"
+print(check_operation(toplam1, fiyat1, miktar1))
+
+check_operation = lambda toplam2, fiyat2, miktar2: "Başarılı" if fiyat2 * miktar2 == toplam2 else "Başarısız"
+print(check_operation(toplam2, fiyat2, miktar2))
+
 print(f"birici ürün fiyatı:{fiyat1}, miktarı: {miktar1}, toplam olması gereken :{fiyat1*miktar1}, ekranda görülen :{toplam1}")
 assert toplam1==(fiyat1*miktar1)
 print(f"ikinci ürün fiyatı:{fiyat2}, miktarı: {miktar2}, toplam olması gereken :{fiyat2*miktar2}, ekranda görülen :{toplam2}")
