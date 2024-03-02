@@ -22,8 +22,10 @@ import time
 driver = webdriver.Chrome()
 driver.maximize_window()
 
-        # WebDriverWait objesini tanımlayalım
-wait = WebDriverWait(driver, 10)
+        # WebDriverWait objesini tanımlayalım implicitlywait
+driver.implicitly_wait(10)
+# expilicitwait tanımlayalım 
+wait = WebDriverWait(driver, 15)
 
         #2. Navigate to url 'http://automationexercise.com'
 url="http://automationexercise.com"
@@ -39,7 +41,7 @@ if "Automation Exercise" in baslik:
         print('Home Page is opened Successfully')
 
         #4. click "products" button 
-driver.find_element(By.XPATH,"//a[@href='/products']").click();
+driver.find_element(By.XPATH,"//a[@href='/products']").click()
 driver.back()
 driver.forward()
 
@@ -77,7 +79,7 @@ cart_button.click()
         #9. Verify both products are added to Cart
         #10. Verify their prices, quantity and total price
         
-        # Ürünlerin ve diğer öğelerin XPath'lerini tanımlandım OOP bir framework kullanılıyorsa kolayca convert edilebilir.
+        # Ürünlerin ve diğer öğelerin XPath'lerini tanımladım OOP bir framework kullanılıyorsa kolayca convert edilebilir.
 product1_xpath = "//a[@href='/product_details/1']"
 product2_xpath = "//a[@href='/product_details/2']"
 price1_xpath = "(//td[@class='cart_price'])[1]"
@@ -137,6 +139,8 @@ print("Test başarıyla sonuçlandı.")
 
 # WebDriver'ı kapat
 #driver.quit()
+
+
 
 
 
