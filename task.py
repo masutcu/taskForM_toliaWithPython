@@ -79,7 +79,7 @@ cart_button.click()
         #9. Verify both products are added to Cart
         #10. Verify their prices, quantity and total price
         
-        # Ürünlerin ve diğer öğelerin XPath'lerini tanımladım OOP bir framework kullanılıyorsa kolayca convert edilebilir.
+        # OOP bir framework'e kolayca convert edilebilmesi için 
 product1_xpath = "//a[@href='/product_details/1']"
 product2_xpath = "//a[@href='/product_details/2']"
 price1_xpath = "(//td[@class='cart_price'])[1]"
@@ -89,7 +89,7 @@ quantity2_xpath = "(//td[@class='cart_quantity'])[2]"
 total1_xpath = "(//td[@class='cart_total'])[1]"
 total2_xpath = "(//td[@class='cart_total'])[2]"
 
-        #her element locate'ine explicit wait eklenerek stable çalışması sağlanmaya çalışıldı
+        #locate alanlarına explicit wait eklenerek stable çalışması sağlanmaya çalışıldı.Site yüklemeleriçok yavaş
         # Ürünlerin varlığını doğrula
 product1 = wait.until(EC.visibility_of_element_located((By.XPATH, product1_xpath)))
 product2 = wait.until(EC.visibility_of_element_located((By.XPATH, product2_xpath)))
@@ -137,8 +137,7 @@ assert toplam2==(fiyat2*miktar2)
 
 print("Test başarıyla sonuçlandı.")
 
-# WebDriver'ı kapat
-#driver.quit()
+
 
 
 
